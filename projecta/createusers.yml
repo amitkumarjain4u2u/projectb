@@ -1,0 +1,9 @@
+---
+- name: playbook to configure important user consistently
+  hosts: all
+  tasks:
+    - name: newbie1 exists with UID 2112
+      user: 
+        name: newbie1
+        uid: 2112
+        state: present

@@ -1,0 +1,6 @@
+---
+- name: play1_pingallservers
+  hosts: all
+  tasks:
+    - name: ping all servers
+      ping:

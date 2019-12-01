@@ -1,0 +1,50 @@
+---
+- name: playbook to enable webserver ntp service and postfix
+  hosts: all
+  tasks: 
+    - name: webserver is installed
+      yum: 
+        name: httpd
+        state: present
+
+    - name: NTP server is installed
+      yum: 
+        name: chronyd
+        state: present
+
+    - name: postfix installed
+      yum: 
+        name: postfix
+        state: present
+
+
+
+    - name: webserver is installed
+      apt:
+        name: apache2
+        state: present
+      
+    - name: NTP server is installed
+      apt:
+        name: chronyd
+        state: present
+    
+    - name: postfix installed
+      apt:
+        name: postfix
+        state: present
+
+
+    - name: webserver is enabled
+      service:
+        name: httpd
+        enabled: true
+    - name: NTP server is enabled
+      service: 
+        name: chronyd
+        enabled: true
+
+    - name: postfix is enabled
+      service:
+        name: postfix
+        enabled: true
